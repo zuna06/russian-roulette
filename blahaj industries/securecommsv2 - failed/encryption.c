@@ -7,12 +7,13 @@
 unsigned long int fsize; 
 extern FILE *file;
 
-void chartobin(char val[]) {
+int chartobin(char val[]) {
     
     char buffer[8];
     int buff = atoi(val);
     //int bin = atoi(buffer);
     printf("%s\t", buff);
+    return buff
 }
 
 void conversion(char fpath[], char key[]) {
@@ -44,7 +45,7 @@ void conversion(char fpath[], char key[]) {
         char buffer[10] = data[i];
         printf("%d", atoi);
         chartobin(buffer);
-        data[i] = chartobin((int)data[i]);
+        data[i] = chartobin(data[i]);
         printf("%d", data[i]);
     }
 
