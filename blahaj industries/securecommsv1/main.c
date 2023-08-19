@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+//#include "encryption.c"
 
 int main() {
 
@@ -20,7 +21,8 @@ int main() {
 
 
     printf("Would you like to modify an existing file or create a new message? [M/n]");
-    scanf("%c", &option);
+    fgets(option, 1, stdin);
+    //scanf("%c", &option);
 
     printf("\n\n");
     
