@@ -17,7 +17,8 @@ int main(int argc, char *argv[]) {
     char key[16];
     char temp[10];
     char header[4];
-    char fileChunk[4];
+    char fileChunk[5];
+    size_t chunkSize;
     FILE *inFile;
     FILE *outFile;
 
@@ -37,13 +38,14 @@ int main(int argc, char *argv[]) {
 
             fseek(inFile, 0, SEEK_END); // seek to end of file
             size = ftell(inFile); // get current file pointer
-            fseek(inFile, 0, SEEK_SET); 
+            fseek(inFile, 0, SEEK_SET);
 
-            printf("%i", size);
+            while  ((chunkSize = fread(fileChunk, 1, sizeof(fileChunk), inFile)) > 0)
+            {
 
-            for(int i = 0; i < (size/4) + 4; i++) {
-                fread(fileChunk, 1, 4, inFile);
-                printf("%sD\n", fileChunk);
+                //fread(fileChunk, 1, 4, inFile);
+                printf("%s", fileChunk);
+
             }
         
         } else {
