@@ -14,10 +14,11 @@ int main(int argc, char *argv[]) {
     
 
     int size;
+    char arr[4];
     char key[16];
     char temp[10];
     char header[4];
-    char fileChunk[5];
+    char fileChunk[4];
     size_t chunkSize;
     FILE *inFile;
     FILE *outFile;
@@ -42,8 +43,6 @@ int main(int argc, char *argv[]) {
 
             while  ((chunkSize = fread(fileChunk, 1, sizeof(fileChunk), inFile)) > 0)
             {
-
-                //fread(fileChunk, 1, 4, inFile);
                 printf("%s", fileChunk);
 
             }
